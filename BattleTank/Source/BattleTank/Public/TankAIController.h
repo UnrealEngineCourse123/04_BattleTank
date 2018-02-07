@@ -4,6 +4,7 @@
 #include "Tank.h"
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "Engine.h"
 #include "TankAIController.generated.h"
 
 /**
