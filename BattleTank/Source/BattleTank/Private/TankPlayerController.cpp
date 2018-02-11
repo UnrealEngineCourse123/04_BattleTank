@@ -2,6 +2,7 @@
 
 #include "TankPlayerController.h"
 #include "BattleTank.h"
+#include "Tank.h"
 
 void ATankPlayerController::BeginPlay()
 {
@@ -36,6 +37,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	if (GetSightRayHitLocation(HitLocation)) //Has "side effect", is going to line trace
 	{
 		GetControlledTank()->AimAt(HitLocation);
+		
 	}
 }
 
@@ -62,12 +64,20 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	auto StartLocation = PlayerCameraManager->GetCameraLocation();
 	auto EndLocation = StartLocation + (LookDirection * LineTraceRange);
 	if (GetWorld()->LineTraceSingleByChannel(
-			HitResult, 
-			StartLocation, 
-			EndLocation, 
-			ECollisionChannel::ECC_Visibility)
-		)
-	{
+		HitResult,
+		StartLocation,
+		EndLocation,
+		ECollisionChannel::ECC_Visibility)
+		){
+	/*	DrawDebugLine(
+			GetWorld(),
+			StartLocation,
+			EndLocation,
+			FColor(255, 0, 0),
+			false, -1, 0,
+			12.333
+		);*/
+	
 		HitLocation = HitResult.Location;
 		return true;
 	}
