@@ -25,6 +25,11 @@ void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
 	Turret = TurretToSet;
 }
 
+//void UTankAimingComponent::SetTrackReference(UTankTrack * TrackToSet)
+//{
+//	Track = TrackToSet;
+//}
+
 void UTankAimingComponent :: AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	if (!Barrel) { return; }

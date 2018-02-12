@@ -8,9 +8,9 @@
 #include "TankBarrel.generated.h"
 
 /**
- * 
+ * TankBarrel is used to rotate the barrel and limit its rotation
  */
-UCLASS(meta = (BlueprintSpawnableComponent), hidecategories=("Collision"))
+UCLASS(meta = (BlueprintSpawnableComponent))
 class BATTLETANK_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
