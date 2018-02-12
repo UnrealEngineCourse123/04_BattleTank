@@ -27,8 +27,6 @@ public:
 
 	void SetTurretReference(UTankTurret* TurretToSet);
 
-	/*void SetTrackReference(UTankTrack* TrackToSet);*/
-
 	void AimAt(FVector WorldSpaceAim, float LaunchSpeed);
 	
 private:
