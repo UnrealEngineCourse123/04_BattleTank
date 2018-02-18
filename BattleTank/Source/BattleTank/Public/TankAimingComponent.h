@@ -39,6 +39,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void Fire();
 
+	EFiringState GetFiringState() const;
+
 	virtual void BeginPlay() override;
 
 protected:
