@@ -21,6 +21,11 @@ class BATTLETANK_API ATankAIController : public AAIController
 
 		virtual void Tick(float DeltaTime) override;
 
+		virtual void SetPawn(APawn* InPawn) override;
+
+		UFUNCTION()
+		void OnPossesedTankDeath();
+
 	protected:
 		//how close can the AI tank get
 		UPROPERTY(EditDefaultsOnly, Category="Setup")
