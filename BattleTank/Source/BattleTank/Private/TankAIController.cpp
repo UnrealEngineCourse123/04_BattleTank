@@ -26,7 +26,9 @@ void ATankAIController::SetPawn(APawn * InPawn)
 
 void ATankAIController::OnPossesedTankDeath()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Recieved!"))
+	
+	if (!ensure(GetPawn())) { return; }
+	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
 void ATankAIController::Tick(float DeltaTime)
@@ -34,6 +36,7 @@ void ATankAIController::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
+	if (!PlayerTank) { return; }
 	auto ControlledTank = GetPawn();
 	auto AimingComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
 

@@ -31,6 +31,11 @@ public:
 	//Start the tank moving the barrel so that a shot would hit where the crosshair intersects the world
 	void AimTowardsCrosshair();
 
+	virtual void SetPawn(APawn * InPawn) override;
+
+	UFUNCTION()
+	void OnPossesedTankDeath();
+
 private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 

@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "Engine/World.h"
+#include "GameFramework/Pawn.h"
 #include "TankAIController.generated.h"
 
 /**
